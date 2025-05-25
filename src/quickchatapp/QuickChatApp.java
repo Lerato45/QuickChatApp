@@ -15,7 +15,7 @@ public class QuickChatApp {
         System.out.print("Enter password: ");
         String password = scanner.nextLine();
 
-        // You can change this login check if you have real users
+       
         if (username.equals("admin") && password.equals("admin123")) {
             System.out.println("Login successful!");
         } else {
@@ -47,7 +47,7 @@ public class QuickChatApp {
 
                         Message msg = new Message(cell, text);
                         messages[messageCount] = msg;
-                        msg.sendMessage();  // Only works if Message.java has this method implemented correctly
+                        msg.sendMessage();  
                         messageCount++;
                     } else {
                         System.out.println("Message limit reached.");
