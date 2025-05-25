@@ -3,71 +3,77 @@ package quickchatapp;
 import java.util.Scanner;
 
 public class QuickChatApp {
-
-    private static boolean loggedIn = false;
+    private static final Scanner scanner = new Scanner(System.in);
+    private static boolean isLoggedIn = false;
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to QuickChat.");
 
-        // 1. Login
-        while (!loggedIn) {
-            System.out.print("Enter username: ");
-            String username = scanner.nextLine();
+        // Login simulation
+        isLoggedIn = login();
 
-            System.out.print("Enter password: ");
-            String password = scanner.nextLine();
-
-            // You can add real login logic later
-            if (username.equals("admin") && password.equals("password")) {
-                loggedIn = true;
-                System.out.println("\nWelcome to QuickChat.\n");
-            } else {
-                System.out.println("Login failed. Try again.\n");
-            }
+        if (!isLoggedIn) {
+            System.out.println("Login failed. Exiting...");
+            return;
         }
 
-        // 2. Set message limit
-        System.out.print("How many messages do you want to send? ");
-        int messageLimit = Integer.parseInt(scanner.nextLine());
-        int messagesSent = 0;
+        // Ask how many messages user wants to send
+        System.out.print("How many messages would you like to send? ");
+        int totalMessages = Integer.parseInt(scanner.nextLine());
+        Message[] messages = new Message[totalMessages];
 
-        while (true) {
-            // 3. Display menu
-            System.out.println("\nChoose an option:");
-            System.out.println("1) Send Messages");
-            System.out.println("2) Show recently sent messages");
+        int messageIndex = 0;
+        boolean running = true;
+
+        while (running) {
+            System.out.println("\nMenu:");
+            System.out.println("1) Send Message");
+            System.out.println("2) Show Recently Sent Messages");
             System.out.println("3) Quit");
+            System.out.print("Choose an option: ");
 
-            System.out.print("Enter choice: ");
-            String choice = scanner.nextLine();
+            String option = scanner.nextLine();
 
-            switch (choice) {
-                case "1":
-                    if (messagesSent < messageLimit) {
-                        System.out.print("Enter recipient: ");
+            switch (option) {
+                case "1" -> {
+                    if (messageIndex < totalMessages) {
+                        System.out.print("Enter recipient cell number (e.g., +27...): ");
                         String recipient = scanner.nextLine();
 
-                        System.out.print("Enter your message: ");
-                        String text = scanner.nextLine();
+                        System.out.print("Enter message: ");
+                        String messageText = scanner.nextLine();
 
-                        Message message = new Message(recipient, text);
-                        System.out.println("\n" + message.printMessage());
+                        Message message = new Message(recipient, messageText);
+                        messages[messageIndex] = message;
+                        messageIndex++;
 
-                        messagesSent++;
+                        System.out.println(message.sendMessage("Send"));
+                        System.out.println(message.printMessage());
                     } else {
-                        System.out.println("Message limit reached.\n");
+                        System.out.println("Message limit reached. Cannot send more messages.");
                     }
-                    break;
-                case "2":
-                    System.out.println("Coming Soon.\n");
-                    break;
-                case "3":
-                    System.out.println("Goodbye!");
-                    return;
-                default:
-                    System.out.println("Invalid option. Try again.");
+                }
+
+                case "2" -> System.out.println("Coming Soon.");
+
+                case "3" -> {
+                    System.out.println("Exiting QuickChat. Goodbye!");
+                    running = false;
+                }
+
+                default -> System.out.println("Invalid option. Try again.");
             }
         }
     }
-}
 
+    private static boolean login() {
+        System.out.print("Enter username: ");
+        String username = scanner.nextLine();
+
+        System.out.print("Enter password: ");
+        String password = scanner.nextLine();
+
+        // Basic login simulation
+        return username.equals("admin") && password.equals("password123");
+    }
+}
