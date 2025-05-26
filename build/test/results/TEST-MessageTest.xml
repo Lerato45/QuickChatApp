@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="labG9AEB3" name="MessageTest" skipped="0" tests="5" time="0.149" timestamp="2025-05-25T19:54:57">
+<testsuite errors="0" failures="0" hostname="labG9AEB3" name="MessageTest" skipped="0" tests="5" time="0.112" timestamp="2025-05-26T17:25:10">
   <properties>
     <property name="libs.spring-framework300.classpath" value="C:\Program Files\NetBeans-19\netbeans\platform\modules\org-apache-commons-logging.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\cglib-2.2.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-aop-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-aspects-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-beans-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-context-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-context-support-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-core-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-expression-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-instrument-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-instrument-tomcat-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-jdbc-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-jms-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-orm-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-oxm-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-struts-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-test-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-tx-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-web-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-webmvc-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-19\netbeans\java\modules\ext\spring-3.0\spring-webmvc-portlet-3.2.18.RELEASE.jar" />
     <property name="javac.test.classpath" value="lib/gson-2.8.9 (4).jar:build/classes:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar" />
@@ -18,7 +18,7 @@
     <property name="libs.eclipselink.javadoc" value="C:\Program Files\NetBeans-19\netbeans\java\modules\ext\docs\jakarta.persistence-2.2.3-doc.zip" />
     <property name="libs.JWSAntTasks.javadoc" value="" />
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner MessageTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\RC_Student_lab\Documents\NetBeansProjects\QuickChatApp\build\test\results\TEST-MessageTest.xml crashfile=C:\Users\RC_Student_lab\Documents\NetBeansProjects\QuickChatApp\build\junitvmwatcher1549148234974176952.properties propsfile=C:\Users\RC_Student_lab\Documents\NetBeansProjects\QuickChatApp\build\junit8269606650578800209.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner MessageTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\RC_Student_lab\Documents\NetBeansProjects\QuickChatApp\build\test\results\TEST-MessageTest.xml crashfile=C:\Users\RC_Student_lab\Documents\NetBeansProjects\QuickChatApp\build\junitvmwatcher10057756220840676007.properties propsfile=C:\Users\RC_Student_lab\Documents\NetBeansProjects\QuickChatApp\build\junit3296652549005325032.properties" />
     <property name="jdk.debug" value="release" />
     <property name="libs.spring-framework300.src" value="" />
     <property name="javadoc.use" value="true" />
@@ -441,9 +441,9 @@
   </properties>
   <testcase classname="MessageTest" name="testCheckRecipientCell_InvalidCellNumber" time="0.005" />
   <testcase classname="MessageTest" name="testMessageLength_ValidLength" time="0.0" />
-  <testcase classname="MessageTest" name="testCreateMessageHash_ContainsExpectedContent" time="0.001" />
+  <testcase classname="MessageTest" name="testCreateMessageHash_ContainsExpectedContent" time="0.0" />
   <testcase classname="MessageTest" name="testMessageLength_ExceedsMaxLength" time="0.0" />
-  <testcase classname="MessageTest" name="testCheckRecipientCell_ValidCellNumber" time="0.0" />
+  <testcase classname="MessageTest" name="testCheckRecipientCell_ValidCellNumber" time="0.001" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

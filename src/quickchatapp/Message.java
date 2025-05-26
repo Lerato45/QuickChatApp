@@ -3,39 +3,60 @@ package quickchatapp;
 public class Message {
     private final String recipientCell;
     private final String messageText;
+    private final String messageHash;
 
     public Message(String recipientCell, String messageText) {
         this.recipientCell = recipientCell;
         this.messageText = messageText;
+        this.messageHash = createMessageHash();
     }
 
+    // 1. Validate the recipient's cell number
     public boolean checkRecipientCell() {
-        // Only accept cell numbers starting with +27 and 11 digits total
-        return recipientCell.matches("\\+27\\d{9}");
+        // Must start with '+27' and be 12 characters total
+        return recipientCell.startsWith("+27") && recipientCell.length() == 12;
     }
 
+    // 2. Validate message length
     public boolean checkMessageLength() {
         return messageText.length() <= 250;
     }
 
-    public String createMessageHash() {
-        // Simple hash: uppercase message content without spaces
-        return messageText.toUpperCase().replaceAll(" ", "") + recipientCell;
+    // 3. Create a hash based on message text (converted to uppercase words)
+    public final String createMessageHash() {
+        String[] words = messageText.toUpperCase().split(" ");
+        StringBuilder hash = new StringBuilder();
+
+        for (String word : words) {
+            hash.append("#").append(word);
+        }
+
+        return hash.toString();
     }
 
-    public void sendMessage() {
+    // 4. Print message details
+    public String printMessage() {
         if (!checkRecipientCell()) {
-            System.out.println("Invalid cell number.");
-            return;
+            return "Invalid recipient number. It must start with +27 and be 12 characters long.";
         }
 
         if (!checkMessageLength()) {
-            System.out.println("Message is too long.");
-            return;
+            return "Message is too long. Limit is 250 characters.";
         }
 
-        System.out.println("Message sent to: " + recipientCell);
-        System.out.println("Message: " + messageText);
-        System.out.println("Message Hash: " + createMessageHash());
+        return "To: " + recipientCell + "\nMessage: " + messageText + "\nHash: " + messageHash;
+    }
+
+    
+    public String getRecipientCell() {
+        return recipientCell;
+    }
+
+    public String getMessageText() {
+        return messageText;
+    }
+
+    public String getMessageHash() {
+        return messageHash;
     }
 }
